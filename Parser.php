@@ -1,0 +1,1 @@
+<?phpclass Parser{	static function bool($var)	{		return filter_var($var,FILTER_VALIDATE_BOOLEAN,FILTER_NULL_ON_FAILURE);	}	static function string($var, $max_len = 0)	{		$str = htmlspecialchars($var, ENT_QUOTES, 'utf-8');		if($max_len > 0)			$str = mb_substr($str, 0, $max_len, "utf-8");		return $str;	}		static function int($var)	{		return intval($var);	}}
